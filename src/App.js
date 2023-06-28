@@ -1,9 +1,15 @@
+/**
+ * Import React hooks and components
+ */
 import { useState } from "react";
 import { FriendsList } from "./FriendsList";
 import { FormAddfriend } from "./FormAddfriend";
 import { FormSplitBill } from "./FormSplitBill";
 import { Button } from "./Button";
 
+/**
+ * Initial friends list data
+ */
 const initialFriends = [
   {
     id: 118836,
@@ -25,25 +31,43 @@ const initialFriends = [
   },
 ];
 
+/**
+ * App component
+ */
 export default function App() {
+  /**
+   * State to track friends list and form visibility
+   */
   const [friends, setFriends] = useState(initialFriends);
   const [showAddFriend, setShowAddFriend] = useState(false);
   const [selectedFriend, setSelectedFriend] = useState(null);
 
+  /**
+   * Handle clicking "Add Friend" button
+   */
   function handleShowAddFriend() {
     setShowAddFriend((show) => !show);
   }
 
+  /**
+   * Add new friend to list
+   */
   function handleAddFriend(friend) {
     setFriends((friends) => [...friends, friend]);
     setShowAddFriend(false);
   }
 
+  /**
+   * Select a friend for splitting bill
+   */
   function handleSelection(friend) {
     setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
     setShowAddFriend(false);
   }
 
+  /**
+   * Handle splitting bill amount
+   */
   function handleSplitBill(value) {
     setFriends((friends) =>
       friends.map((friend) =>
@@ -56,6 +80,9 @@ export default function App() {
     setSelectedFriend(null);
   }
 
+  /**
+   * Render app UI
+   */
   return (
     <div className="app">
       <div className="sidebar">
