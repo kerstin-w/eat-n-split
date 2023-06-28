@@ -1,12 +1,24 @@
 import { useState } from "react";
 import { Button } from "./Button";
 
+/**
+ * Form for splitting a bill between friends
+ *
+ * @param {Object} props Component props
+ * @param {Object} props.selectedFriend Selected friend object
+ * @param {Function} props.onSplitBill Called when form is submitted
+ */
 export function FormSplitBill({ selectedFriend, onSplitBill }) {
+  /** State for form input values */
   const [bill, setBill] = useState("");
   const [paidByUser, setPaidByUser] = useState("");
   const paidByFriend = bill ? bill - paidByUser : "";
   const [whoIsPaying, setWhoIsPaying] = useState("user");
 
+  /**
+   * Handle form submission
+   * @param {Event} e Form submit event
+   */
   function handleSubmit(e) {
     e.preventDefault();
 
