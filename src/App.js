@@ -58,9 +58,13 @@ function Friend({ friend }) {
         </p>
       )}
       {friend.balance === 0 && <p> You and {friend.name} are even</p>}
-      <button className="button">Select</button>
+      <Button>Select</Button>
     </li>
   );
+}
+
+function Button({ children }) {
+  return <button className="button">{children}</button>;
 }
 
 function FormAddfriend() {
@@ -71,6 +75,7 @@ function FormAddfriend() {
 
       <lable>🏞️ Image URL</lable>
       <input type="text" />
+      <Button>Add Friend</Button>
     </form>
   );
 }
