@@ -3,7 +3,7 @@
  */
 import { useState } from "react";
 import { FriendsList } from "./FriendsList";
-import { FormAddfriend } from "./FormAddfriend";
+import { FormAddFriend } from "./FormAddFriend";
 import { FormSplitBill } from "./FormSplitBill";
 import { Button } from "./Button";
 
@@ -91,7 +91,7 @@ export default function App() {
           selectedFriend={selectedFriend}
           onSelection={handleSelection}
         />
-        {showAddFriend && <FormAddfriend onAddFriend={handleAddFriend} />}
+        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button onClick={handleShowAddFriend}>
           {showAddFriend ? "Close" : "Add Friend"}
         </Button>

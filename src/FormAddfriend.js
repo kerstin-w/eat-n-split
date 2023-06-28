@@ -7,7 +7,7 @@ import { Button } from "./Button";
  * @param {Object} props Component props
  * @param {Function} props.onAddFriend Called when form is submitted
  */
-export function FormAddfriend({ onAddFriend }) {
+export function FormAddFriend({ onAddFriend }) {
   /** State for form input values */
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
